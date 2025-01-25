@@ -62,8 +62,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 700px;
-  height: 960px;
+  width: clamp(375px, 100%, 700px);
+  height: fit-content;
   font-family: var(--main-font);
   background-color: #fff;
   border: 2px solid var(--main-color);
