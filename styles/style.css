@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-size: cover;
 }
 
 .header {
@@ -27,7 +28,6 @@
   flex-direction: column;
   align-items: center;
   width: clamp(375px, 100%, 700px);
-  height: 368px;
   font-family: var(--accent-font);
   background-color: #fff;
   border: 2px solid var(--main-color);
@@ -36,16 +36,16 @@
 
 .header-logo {
   padding-top: 128px;
-  font-size: 65px;
+  font-size: clamp(49px, 4vw + 1rem, 65px);
   font-weight: var(--font-weight-regular);
   line-height: 65px;
   text-decoration: none;
-
 }
 
 .header-title {
   padding-top: 20px;
-  font-size: 23px;
+  padding-bottom: 128px;
+  font-size: clamp(14px, 2vw + 0.5rem, 23px);
   font-weight: var(--font-weight-regular);
   line-height: 23px;
   text-transform: uppercase;
@@ -55,6 +55,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: clamp(375px, 100%, 700px);
   margin-top: 100px;
   gap: 50px;
 }
@@ -67,6 +68,7 @@
   font-family: var(--main-font);
   background-color: #fff;
   border: 2px solid var(--main-color);
+  position: relative;
 }
 
 .minor-title {
@@ -74,6 +76,22 @@
   font-variation-settings: 'wght' var(--font-weight-bold);
   line-height: 21.78px;
   text-align: left;
+  padding: 5px 10px;
+}
+
+.card-little-title {
+  z-index: 1;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  line-height: 14px;
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  opacity: 0.5;
+  color: var(--main-color);
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  mix-blend-mode: hard-light;
 }
 
 p {
@@ -86,3 +104,236 @@ p {
   padding: 27px 25px 0px;
 }
 
+.button__conteiner {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-self: flex-end;
+  margin: 25px;
+}
+
+.card__icon-button {
+  display: flex;
+  align-items: center;
+  border: 2px solid transparent;
+  background-color: transparent; 
+  cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--main-color);
+  transition: 0.3s ease;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  position: relative;
+  background-color: transparent; 
+  border: 2px solid var(--main-color);
+  cursor: pointer;
+}
+
+.card__like-button:focus-visible {
+  outline: none; 
+  transition: box-shadow 0.3s ease;
+  box-shadow: 2px 2px 0 var(--main-color); 
+}
+
+.card__like-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0%; /* Начинаем в центре */
+  width: 100%; /* Ширина псевдоэлемента */
+  height: 100%; /* Высота псевдоэлемента равна высоте кнопки */
+  background-color: var(--main-color);/* Цвет псевдоэлемента */
+  transform: scaleX(0); /* Начинаем с масштаба 0 */
+  transition: transform 0.5s ease-in-out; /* Плавный переход по масштабу */
+  transform-origin: left; /* Изменение масштаба происходит от левого края */
+}
+
+.card__like-button:hover::before {
+  transform: scaleX(1); /* Масштабируем до 1 при наведении */
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  line-height: 12.6px;
+  color: #fff; 
+  mix-blend-mode: difference;
+}
+
+.car-neo-noir {
+  filter: grayscale(0.7);
+}
+
+.car-saturative {
+  filter: saturate(3);
+}
+
+.car-purple {
+  filter: hue-rotate(30deg);
+}
+
+.car-negative {
+  filter: invert(0.8);
+}
+
+.car-sepia {
+  filter: sepia(0.8);
+}
+
+.car-blur {
+  filter: blur(10px);
+}
+
+.car-super-negative {
+  filter: sepia(0.5) saturate(1.4) contrast(1.6) blur(4px) hue-rotate(60deg);
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+  gap: 10px;
+  margin-bottom: 50px;
+  height: 55px;
+  width: 335px;
+  border: 2px solid var(--main-color);
+  background-color: #fff; 
+  cursor: pointer;
+}
+
+.save-button:focus-visible {
+  outline: none; 
+  transition: box-shadow 0.3s ease;
+  box-shadow: 2px 2px 0 var(--main-color); 
+}
+
+.save-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0%; /* Начинаем в центре */
+  width: 100%; /* Ширина псевдоэлемента */
+  height: 100%; /* Высота псевдоэлемента равна высоте кнопки */
+  background-color: var(--main-color);/* Цвет псевдоэлемента */
+  transform: scaleX(0); /* Начинаем с масштаба 0 */
+  transition: transform 0.5s ease-in-out; /* Плавный переход по масштабу */
+  transform-origin: left; /* Изменение масштаба происходит от левого края */
+}
+
+.save-button:hover::before {
+  transform: scaleX(1); /* Масштабируем до 1 при наведении */
+}
+
+.floppy {
+  position: relative;
+  z-index: 1;
+  width: 21px;
+  height: 21px;
+  color: #fff; 
+  mix-blend-mode: difference;
+}
+
+.card-button-little-title {
+  position: relative;
+  z-index: 1;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  line-height: 12.6px;
+  color: #fff; 
+  mix-blend-mode: difference;
+}
+
+.popup[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+
+.popup::backdrop {
+  background: #000;
+  opacity: 75%;
+}
+
+.popup-content__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.button__text-popup {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--font-weight-regular);
+  line-height: 21px;
+  text-transform: uppercase;
+  width: 234px;
+}
+
+.button__ok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  border: 2px solid var(--main-color);
+  background-color: transparent; 
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+@media (width <= 465px) {
+  .card-little-title {
+    right: 12px;
+  }
+
+  .new-padding {
+    top: 75px;
+  }
+}
+
+@media (width <= 375px) {
+  .header-logo {
+    padding-top: 120px;
+  }
+
+  .header-title {
+    padding-top: 20px;
+    padding-bottom: 120px;
+  }
+
+  .save-button {
+    flex-direction: column;
+    height: 80px;
+    width: 306px;
+  }
+
+  .floppy {
+    width: 28px;
+    height: 28px;
+  }
+
+  .popup {
+    padding: 30px 42px;
+  }
+
+  .popup[open] {
+    gap: 30px;
+  }
+  
+}
