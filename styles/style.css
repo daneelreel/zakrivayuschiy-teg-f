@@ -79,6 +79,7 @@
   line-height: 21.78px;
   text-align: left;
   padding: 5px 10px;
+  border-bottom: 2px solid var(--main-color);
 }
 
 .card-little-title {
@@ -88,7 +89,7 @@
   font-weight: var(--font-weight-regular);
   line-height: 14px;
   position: absolute;
-  top: 50px;
+  top: 58px;
   right: 25px;
   opacity: 0.5;
   color: var(--main-color);
@@ -100,8 +101,9 @@
   display: flex;
   flex-direction: column;
   width: clamp(375px, 100%, 700px);
-  height: clamp(375px, 100%, 700px);
+  height: 100%;
   aspect-ratio: 1 / 1; 
+  background-size: cover;
 }
 
 p {
@@ -112,6 +114,10 @@ p {
   line-height: 21px;
   text-align: left;
   padding: 27px 25px 0px;
+}
+
+p:nth-child(2n) {
+  border-top: 2px solid var(--main-color);
 }
 
 .button__conteiner {
