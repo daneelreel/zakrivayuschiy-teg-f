@@ -126,10 +126,7 @@ p:nth-child(2n) {
   gap: 5px;
   align-self: flex-end;
   margin: 25px;
-}
-
-.button__conteiner:focus-visible {
-  transition: 0.3s ease;
+  
 }
 
 .card__icon-button {
